@@ -12,12 +12,14 @@ def aupton(target: int):
     """adapted from Michael S. Branicky's code from Jun 12 2021"""
     num: int = 0
     alst: list[int] = [0]
-    inventory: Counter[int] = Counter([0])
+    #inventory: Counter[int] = Counter([0])
+    inventory: list[int] = [1] + [0] * target
     for _ in range(2, target + 1):
         c = inventory[num]
         num = 0 if c == 0 else num + 1
         alst.append(c)
-        inventory.update([c])
+        #inventory.update([c])
+        inventory[c] += 1
     return alst
 
 
