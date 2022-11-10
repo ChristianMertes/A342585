@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 """script to generate the infinite series https://oeis.org/A342585 with an optional parameter as the stopping point"""
-import sys
 from collections import Counter
 from itertools import count
 import sys

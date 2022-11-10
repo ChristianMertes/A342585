@@ -3,18 +3,17 @@
 Script to generate a scatter plot of the infinite series https://oeis.org/A342585
 with the number of terms to generate as the first parameter and the output file as a second.
 """
-import sys
 from collections import Counter
-from itertools import count
 import sys
 import matplotlib.pyplot as plt
+
 
 def aupton(target: int):
     """adapted from Michael S. Branicky's code from Jun 12 2021"""
     num: int = 0
     alst: list[int] = [0]
     inventory: Counter[int] = Counter([0])
-    for n in range(2, target + 1):
+    for _ in range(2, target + 1):
         c = inventory[num]
         num = 0 if c == 0 else num + 1
         alst.append(c)
