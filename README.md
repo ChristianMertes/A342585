@@ -27,8 +27,9 @@ Here, the number of terms is mandatory but you can add an additional argument to
 and, literally by extension, the output file type:
 
 ```bash
-poetry run python plot_sequence.py 100000000 plots/myplot.pdf
+/usr/bin/time -fpeak_used_memory:%M poetry run python plot_sequence.py `echo 10^8 | bc` plots/myplot.pdf
 ```
 
-Generating 10^8 terms took 9:42 minutes on my 2018 MacBook Pro with a 2.3 GHz Intel Core i5:
+Generating 10^8 terms took 9:42 minutes on my 2018 MacBook Pro with a 2.3 GHz Intel Core i5 and just 3:41 minutes
+on my desktop 4GHz Intel Core i7-6700K:
 ![](plots/plot_up_to_100000000.png)
