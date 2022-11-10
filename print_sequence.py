@@ -10,6 +10,7 @@ def aupton(target: int):
     num: int = 0
     alst: list[int] = [0]
     inventory: Counter[int] = Counter([0])
+    yield 0
     for n in range(2, target + 1) if target > 1 else count(2):
         c = inventory[num]
         num = 0 if c == 0 else num + 1
